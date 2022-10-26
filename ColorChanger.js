@@ -51,7 +51,7 @@ export default function EmailTextImput(){
     const handleChange_ = (event) => setEmail(event.target.value);
 
     // or it can be made to be
-    
+
     const _handleChange_ = ({target}) => setEmail(target.value);
 
     return (
@@ -60,5 +60,18 @@ export default function EmailTextImput(){
 
 }
 
+// similarly, the next value of state can be calculated using the current state, in this case, the state should be captured using a callback function, for example
+export default function Counter(){
+    const [count,setCount] = useState(0);
+    const increment = () => setCount(prevCount => prevCount + 1)
+    return (
+        <div>
+            <p>Clicked the button: {count} times </p>
+            <button onClick={increment}>
+                Click here!
+            </button>
+        </div>
+    );
+}
 
 ReactDOM.render(<ColorPicker/>, document.getElementById('app'));
