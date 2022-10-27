@@ -1,5 +1,6 @@
 import React from "react";
 
+// props are defined here in the function's argument list i.e items and onItemClick
 export default function ItemList({items,onItemClick}){
 
     const handleClick = ({ target }) => {
