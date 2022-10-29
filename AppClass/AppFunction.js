@@ -35,8 +35,18 @@ export default function AppFunction(){
     }
 
     return (
-        
-    )
+        <main>
+                <h1>Tasks</h1>
+                <NewTask
+                    newTask = {newTask}
+                    handleChange = {handleChange}
+                    handleSubmit = {handleSubmit}
+                />
 
-
+                <TasksList
+                    allTasks={newTask}
+                    handleDelete={handleDelete}
+                />
+            </main>
+    );
 }

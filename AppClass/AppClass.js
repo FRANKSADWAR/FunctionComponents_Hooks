@@ -60,7 +60,7 @@ class AppClass extends React.Component {
                     handleDelete={this.handleDelete}
                 />
             </main>
-        )
+        );
     }
 }
 
