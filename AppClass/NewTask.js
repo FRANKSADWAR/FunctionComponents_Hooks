@@ -1,6 +1,5 @@
-import React from "react";
 
-export default function NewTask({newTask, handleChange, handleSubmit}){
+function NewTask({newTask, handleChange, handleSubmit}){
     return (
         <form onSubmit={handleSubmit}>
             <input
