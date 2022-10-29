@@ -1,38 +1,32 @@
-import React, {useState} from "react";
-import ReactDOM from "react";
-import { render } from "react-dom";
+import React, { useState } from "react";
+import NewTask from "./NewTask";
+import TasksList from "./TasksList";
 
 export default function AppFunction(){
 
-    const [newTask,setTask] = useState({});
-    const [allTasks, setAllTasks] = useState([]);
-
+    const [newTask,setNewTask] = useState({});
     const handleChange = ({target}) => {
         const {name,value} = target;
-        setTask((prevState) => ({
+        setNewTask((prevState) => ({
             ...prevState,
             [name]: value,
             id: Date.now()
         }));
+    };
 
-    }
+    const [allTasks, setAllTasks] = useState([]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         if(!newTask.title) return ;
-        setAllTasks((prevState) => ({
-            allTasks: [prevState.newTask, ...prevState.allTasks ],
-            newTask : {}
-        }));
-    }
+        setAllTasks((prev)=> ([newTask,...prev]));
+        setNewTask({});
+    };
 
     const handleDelete = (taskIdToRemove) => {
-        setAllTasks((prevState) => ({
-            ...prevState,
-            allTasks: prevState.allTasks.filter((task) => task.id !== taskIdToRemove)
-        }));
-
-    }
+        setAllTasks((prev) => prev.filter( 
+          (task) => task.id !== taskIdToRemove));
+    };
 
     return (
         <main>
@@ -44,7 +38,7 @@ export default function AppFunction(){
                 />
 
                 <TasksList
-                    allTasks={newTask}
+                    allTasks={allTasks}
                     handleDelete={handleDelete}
                 />
             </main>
