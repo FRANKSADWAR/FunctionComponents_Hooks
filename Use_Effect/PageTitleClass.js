@@ -20,7 +20,12 @@ class PageTitle extends React.Component{
     render(){
         return (
             <div>
-                
+                <p>
+                    Use the input field below to rename this page!
+                </p>
+                <input
+                    onChange={(target)=> this.setState({name: target.value})}
+                />
             </div>
         );
     }
