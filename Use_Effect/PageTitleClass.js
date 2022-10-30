@@ -18,6 +18,10 @@ class PageTitle extends React.Component{
         document.title = `Hi ${this.state.name}`;
     }
     render(){
-
+        return (
+            <div>
+                
+            </div>
+        );
     }
 }
