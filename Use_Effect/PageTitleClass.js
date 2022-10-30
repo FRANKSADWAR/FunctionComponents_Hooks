@@ -11,11 +11,11 @@ class PageTitle extends React.Component{
     }
 
     componentDidMount(){
-
+        document.title = this.state.name;
     }
 
     componentDidUpdate(){
-
+        document.title = `Hi ${this.state.name}`;
     }
     render(){
 
