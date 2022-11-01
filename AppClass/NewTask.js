@@ -1,5 +1,5 @@
 
-function NewTask({newTask, handleChange, handleSubmit}){
+export default function NewTask({newTask, handleChange, handleSubmit}){
     return (
         <form onSubmit={handleSubmit}>
             <input
