@@ -1,5 +1,7 @@
-import TasksList from "./TasksList";
-import NewTask from "./NewTask";
+//import NewTask from "./NewTask";
+//import TasksList from "./TasksList";
+
+
 class AppClass extends React.Component {
     constructor(props){
         super(props);
@@ -45,7 +47,7 @@ class AppClass extends React.Component {
 
     render(){
         return (
-            <main>
+            <div>
                 <h1>Tasks</h1>
                 <NewTask
                     newTask = {this.state.newTask}
@@ -54,10 +56,10 @@ class AppClass extends React.Component {
                 />
 
                 <TasksList
-                    allTasks={this.state.newTask}
+                    allTasks={this.state.allTasks}
                     handleDelete={this.handleDelete}
                 />
-            </main>
+            </div>
         );
     }
 }

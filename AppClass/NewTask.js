@@ -1,5 +1,4 @@
-
-export default function NewTask({newTask, handleChange, handleSubmit}){
+function NewTask({newTask, handleChange, handleSubmit}){
     return (
         <form onSubmit={handleSubmit}>
             <input
@@ -9,15 +8,15 @@ export default function NewTask({newTask, handleChange, handleSubmit}){
                 onChange={handleChange}
             />
             {!newTask.title ? null: (
-                <>
-                    <textarea
+                    <div>
+                        <textarea
                         name="desription"
                         placeholder="Details..."
                         value={newTask.description || ""}
                         onChange={handleChange}
                     />
                     <button type="submit">Add Task</button>
-                </>
+                    </div>
             )}
         </form>
     );
