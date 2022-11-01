@@ -1,7 +1,3 @@
-//import NewTask from "./NewTask";
-//import TasksList from "./TasksList";
-
-
 class AppClass extends React.Component {
     constructor(props){
         super(props);
