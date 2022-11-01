@@ -9,6 +9,7 @@
 import React, {useState,useEffect} from "react";
 import ReactDOM from "react-dom";
 
+// install the apps
 
 function Forecast(){
     const [data,setData] = useState();
