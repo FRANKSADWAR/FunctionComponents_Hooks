@@ -7,7 +7,7 @@ function PageTitle(){
     // in the function components, we use the useEffect function to update, and set side effects for the components as compared to the three lifecycle methods in class based components
     useEffect(()=>{
         document.title = `Hi ${title}`;
-    },[title]);
+    },[title]); // call the effect when the title changes 
 
     return (
         <div>
