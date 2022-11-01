@@ -25,7 +25,7 @@ function Forecast(){
 
     const handleChange = (index) => ({target}) => setNotes((prev)=> ({
         ...prev, // using the spread syntax to set the current state using the previous state
-        [index] : target.value
+        [index] : target.value // setting the state
     }));
 
     if(!data){
