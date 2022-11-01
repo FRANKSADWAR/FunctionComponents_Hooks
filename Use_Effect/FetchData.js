@@ -15,6 +15,7 @@ function Forecast(){
     const [notes,setNotes] = useState({});
     const [forecastType, setForecastType] = useState('/daily'); // set the initial state to the daily datasets
 
+    // always organize the data into separate hooks and effects, and effects are used at the top level
     useEffect(()=> {
         alert('Requested data from the server .....');
         get(forecastType).then((response) => {
