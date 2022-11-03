@@ -1,7 +1,3 @@
-
-
-
-
 class AppClass extends React.Component {
     constructor(props){
         super(props);
@@ -47,7 +43,7 @@ class AppClass extends React.Component {
 
     render(){
         return (
-            <main>
+            <div>
                 <h1>Tasks</h1>
                 <NewTask
                     newTask = {this.state.newTask}
@@ -56,54 +52,12 @@ class AppClass extends React.Component {
                 />
 
                 <TasksList
-                    allTasks={this.state.newTask}
+                    allTasks={this.state.allTasks}
                     handleDelete={this.handleDelete}
                 />
-            </main>
+            </div>
         );
     }
 }
 
-function TasksList({allTasks, handleDelete}){
-    return (
-        <ul>
-            { allTasks.map(({title,description,id})=>(
-                <li key={id}>
-                    <div>
-                        <h2>{title}</h2>
-                        <button onClick={()=> handleDelete(id)}> X </button>
-                    </div>
-                    {!description ? null: <p>{description}</p>}
-                </li>
-            ) )}
-        </ul>
-    );
-}
-
-function NewTask({newTask, handleChange, handleSubmit}){
-    return (
-        <form onSubmit={handleSubmit}>
-            <input
-                name="title"
-                placeholder="New Task"
-                value={newTask.title || ""}
-                onChange={handleChange}
-            />
-            {!newTask.title ? null: (
-                <>
-                    <textarea
-                        name="desription"
-                        placeholder="Details..."
-                        value={newTask.description || ""}
-                        onChange={handleChange}
-                    />
-                    <button type="submit">Add Task</button>
-                </>
-            )}
-        </form>
-    );
-}
-
-
-
-ReactDOM.render(<AppClass/>,document.getElementById('content'));
+ReactDOM.render(<AppClass/>,document.getElementById("content"));

@@ -1,9 +1,9 @@
 
 
-export default function TasksList({allTasks, handleDelete}){
+function TasksList({allTasks, handleDelete}){
     return (
         <ul>
-            { allTasks.map(({title,description,id})=>(
+            { allTasks.map( ({title,description,id})  =>(
                 <li key={id}>
                     <div>
                         <h2>{title}</h2>
@@ -11,7 +11,7 @@ export default function TasksList({allTasks, handleDelete}){
                     </div>
                     {!description ? null: <p>{description}</p>}
                 </li>
-            ) )}
+            )) }
         </ul>
     );
 }

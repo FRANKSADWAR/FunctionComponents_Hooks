@@ -1,4 +1,3 @@
-
 function NewTask({newTask, handleChange, handleSubmit}){
     return (
         <form onSubmit={handleSubmit}>
@@ -9,15 +8,15 @@ function NewTask({newTask, handleChange, handleSubmit}){
                 onChange={handleChange}
             />
             {!newTask.title ? null: (
-                <>
-                    <textarea
+                    <div>
+                        <textarea
                         name="desription"
                         placeholder="Details..."
                         value={newTask.description || ""}
                         onChange={handleChange}
                     />
                     <button type="submit">Add Task</button>
-                </>
+                    </div>
             )}
         </form>
     );
